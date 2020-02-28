@@ -8,26 +8,22 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 
 ### What I'm going to do:
-- Build feature extractors and a data set of a few features
-- There are several feature categories that can be used to detect a phishing web page with a high accuracy [1] 
-- The single best category is URL based category in which predictor features are parts or elements of URL. However, if URL based features do not give a high predicing accuracy, then the features from other categories in interaction with url features gives the best performance. 
-- In this task I'm going to use only features than be extracted with URL such as age, since they are the most interesting to me and also they can be extracted easily by a few lines of code and a web browser without any access to third party services. Also that was specifically given in a task instructions.
-- Also multi-criteria methods have been proved to be most efficient [1]. 
+- Build feature extractors which could predict a risk of web page being malicious
+- Handle errors in extracting
+- Build a small dataset based on features
 
 
 ## FEATURES
 - Features below are based on findings in provided papers and my own interest, bias and preconceptions about them. 
-- The most of the papers discovered that combining features from different categories gives the best prediction accuracy. 
-    - Single best predictor is URL based features -> more features
-    - Combined with other features the dataset will be more powerful in classifying.
+- The most of the papers discovered that combining features from different categories gives the best prediction accuracy [1,2]. 
+    - Single best predictor is URL based features [1]
     - Also all features are language independent
-
+    
 
 ### Categories
 1.  URL based features
-    - protocol: http or https ok
-    - count of dots: integer ok
-    - count of level domains: integer
+    - protocol: http or https
+    - count of dots in fqdn (Fully Qualified Domain Name): integer 
     - length of url: integer ok
     - length of Fully Qualified Domain Name (FQDN): integer ok
     - number of redirections: integer
@@ -48,25 +44,42 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ### Storing data
 
 - Data Structure: DataFrame by Pandas, permanent storing can be done by saving in .csv format
-- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value I will save it to a DataFrame. It's also a valuable information. Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
+- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value I will save it to a DataFrame. It's also a valuable information. 
+- Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
 
 
 
-# What next? 
-### Data
+# Questions:
+1. what features could indicate the malicousness of a given URL?
+2. What goes in to the thinking of the attacker when they are choosing a site for an attack?
+3. What would you develop next?
+
+
+## 1. features indicating the maliciousness of a given URL?
+- URL based features are the single best predictor [1]
+- However, best results are achieved when combining features from different categories. 
+
+## 2. attackers thinking
+- Typical example of phishing site is web page which mimic some other page. At its best the phishing site looks and feels the same and a user may not detect that. In that case the user might give some sensitive information such as credit card informations. 
+
+## 3. What next? 
+### Higher quality of data
 - Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best. 
-- Get more data but focus on feature categories instead of amount of data
-  
+ - I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
+- Use a better API such as www.whois.net -> it gives much more information than input.payapi
+- The problem in input.payapi are the amount of null or none values -> I would try to combine different APIs to get higher level of certainty of data.
 
-###  Metrics: 
+### Define metrics: 
 - Compare my results to existing blacklists systems such as Google safebrowsing and PhishTank.
-- Compare results with a test set and validate the model
 
+
+### Preprocess data
+- For example:
+    - mapping categorical values into numerical
+    -  handle missing values with estimating or removing: this is a data set size dependent. 
+    
 ### Modeling
-- Build a classifier: based on Twitter paper the Random Forest Classifier achieved good results
-- Based on two papers combining feature categories gives the best results -> interaction of features! 
-- Map values suitable for ML model
-
+- Build a classifier: for example Random Forest gave good results [2]
 
 
 
