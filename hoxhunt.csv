@@ -1,0 +1,13 @@
+	url	protocol	url_length	num_of_dots_fqdn	fqdn_length	age	country	isIpBlacklisted	isIpProxy	redirects	error
+0	https://www.slideshare.net/weaveworks/client-side-monitoring-with-prometheus	https	76	2	18	5077	United States	False	False	0	
+1	http://cartaobndes.gov.br.cv31792.tmweb.ru/	http	43	5	35	4991	Russia	False	False	?	
+2	https://paypal.co.uk.yatn.eu/m/	https	31	4	20					?	NoDomainAgeData
+3	http://college-eisk.ru/cli/	http	27	1	15	3059	Russia	False	False	0	
+4	https://dotpay-platnosc3.eu/dotpay/	https	35	1	19					?	NoDomainAgeData
+5	https://yakbstains.cloudaccess.host/index.html	https	46	2	27					0	InternalServerError
+6	https://muskdrop.vip	https	20	1	12	4				?	
+7	http://unvisored-destinati.000webhostapp.com/	http	45	2	37	1387	United States	False	False	0	
+8	http://gabungvideoviral77.000webhostapp.com/login.php	http	53	2	36	1387	United States	False	False	0	
+9	https://www.google.com/url?sa=t&ectrans=1&cd=3&rct=j&cad=rja&usg=AOvVaw0_9EI52uq3vapizMNgByf0&url=http%3A//nextsteppk.com/courselist&q=&ved=2ahUKEwi-rviTieHnAhXF7eAKHVLFD6AQFjACegQIBhAB&source=web&uact=8&esrc=s	https	210	2	14	8201	United States	False	False	0	
+10	https://www.tiktok.com/ar/	https	26	2	14	8622	Singapore	False	False	0	
+11	https://www.disneyworld.eu/login/?returnUrl=/profile/	https	53	2	18					0	NoDomainAgeData
