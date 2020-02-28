@@ -16,7 +16,7 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ## FEATURES
 - Features below are based on findings in provided papers and my own interest, bias and preconceptions about them. 
 - The most of the papers discovered that combining features from different categories gives the best prediction accuracy [1,2]. 
-    - Single best predictor is URL based features [1]
+    - Single best predicting category is URL based features [1]
     - Also all features are language independent
     
 
@@ -50,17 +50,24 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 
 # Questions:
-1. what features could indicate the malicousness of a given URL?
+1. What features could indicate the malicousness of a given URL?
 2. What goes in to the thinking of the attacker when they are choosing a site for an attack?
 3. What would you develop next?
 
 
 ## 1. features indicating the maliciousness of a given URL?
 - URL based features are the single best predictor [1]
-- However, best results are achieved when combining features from different categories. 
+- However, best results are achieved when combining features from different categories [1,2]. 
 
 ## 2. attackers thinking
-- Typical example of phishing site is web page which mimic some other page. At its best the phishing site looks and feels the same and a user may not detect that. In that case the user might give some sensitive information such as credit card informations. 
+- Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
+- Attackers' main goal is to get a user to a fake page and make a user to think this is the real target page. 
+- Fake sites are usually alive for a short time so typically target sites are the ones where is a lot of traffic. 
+- The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of them will be tricked! 
+- Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
+- Basically, the weakest link in the security chain is a human. Attacker tries to trick users cognition. 
+
+
 
 ## 3. What next? 
 ### Higher quality of data
