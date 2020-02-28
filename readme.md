@@ -55,11 +55,11 @@ Be prepared to discuss questions such as: what features could indicate the malic
 3. What would you develop next?
 
 
-## 1. features indicating the maliciousness of a given URL?
+## 1. Features indicating the maliciousness of a given URL?
 - URL based features are the single best predictor [1]
 - However, best results are achieved when combining features from different categories [1,2]. 
 
-## 2. attackers thinking
+## 2. Attackers thinking
 - Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
 - Attackers' main goal is to get a user to a fake page and make a user to think this is the real target page. 
 - Fake sites are usually alive for a short time so typically target sites are the ones with high traffic.
@@ -69,24 +69,30 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 
 ## 3. What next? 
-### Higher quality of data
-- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a wep page is a phishing site or not.
+- In general: read more articles, learn more, understand better -> faster decision making. 
+### High quality of data
+- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a web page is a phishing site or not.
 - I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
-- Use a better API such as www.whois.net -> it gives much more information than input.payapi. 
-    - In this task input.payapi was a good one since it does not require authentication. 
-- Combine different APIs -> higher level of certainty of a quality of data. 
 
-### Define metrics: 
-- Validate my results with existing blacklists systems such as Google safebrowsing and PhishTank.
+### API
+- Use another API such as www.whois.net in order to get more and more detailed informations. 
+    - In this task input.payapi was a good one since it does not require authentication and code can be run by anyone without authentication. 
+- Combine information from different APIs -> higher level of certainty of a quality of data
+    - For example: double check blacklists. 
 
 ### Preprocess data
 - For example:
     - mapping categorical values into numerical such as http/https -> 0/1
-    -  handle missing values by estimating or removing: this is a data set size dependent. 
-    
-### Modeling
-- Build a classifier: for example Random Forest gave good results [2]
-- Try out different models. 
+    - handle missing values by estimating or removing: this is a data set size dependent. 
+
+### Define metrics: 
+- For example: compare accuracy of the model to blacklist systems such as Google SafeBrowsing or PhishTank
+
+
+### Build a model
+- Build a classifier: for example Random Forest gave good results in detecting phishing site [2]
+- Try out different models and compare their performance. 
+
 
 
 # References
