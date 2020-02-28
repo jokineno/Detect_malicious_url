@@ -43,8 +43,8 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 ### Storing data
 
-- Data Structure: DataFrame by Pandas, permanent storing can be done by saving in .csv format
-- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value I will save it to a DataFrame. It's also a valuable information. 
+- Data Structure: DataFrame by Pandas, permanent storing can be done by saving in .csv format with df.to_csv() function.
+- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value code will save it to a DataFrame. It's also a valuable information. 
 - Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
 
 
@@ -62,32 +62,31 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ## 2. attackers thinking
 - Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
 - Attackers' main goal is to get a user to a fake page and make a user to think this is the real target page. 
-- Fake sites are usually alive for a short time so typically target sites are the ones where is a lot of traffic. 
-- The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of them will be tricked! 
+- Fake sites are usually alive for a short time so typically target sites are the ones with high traffic.
+- The power of phishes come from statistical probability -> phishers may send thousands or tens of thousands of emails and some of them will be tricked! 
 - Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
 - Basically, the weakest link in the security chain is a human. Attacker tries to trick users cognition. 
 
 
-
 ## 3. What next? 
 ### Higher quality of data
-- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best. 
- - I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
-- Use a better API such as www.whois.net -> it gives much more information than input.payapi
-- The problem in input.payapi are the amount of null or none values -> I would try to combine different APIs to get higher level of certainty of data.
+- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a wep page is a phishing site or not.
+- I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
+- Use a better API such as www.whois.net -> it gives much more information than input.payapi. 
+    - In this task input.payapi was a good one since it does not require authentication. 
+- Combine different APIs -> higher level of certainty of a quality of data. 
 
 ### Define metrics: 
-- Compare my results to existing blacklists systems such as Google safebrowsing and PhishTank.
-
+- Validate my results with existing blacklists systems such as Google safebrowsing and PhishTank.
 
 ### Preprocess data
 - For example:
-    - mapping categorical values into numerical
-    -  handle missing values with estimating or removing: this is a data set size dependent. 
+    - mapping categorical values into numerical such as http/https -> 0/1
+    -  handle missing values by estimating or removing: this is a data set size dependent. 
     
 ### Modeling
 - Build a classifier: for example Random Forest gave good results [2]
-
+- Try out different models. 
 
 
 # References
