@@ -64,7 +64,7 @@ Implement any kind of actual predicition models that uses the features to give p
 ### Storing data
 - Data Structure: DataFrame by Pandas
     - Permanent storing in .csv format -> can be done with df.to_csv() function provided by Pandas .
-- Handling NULLs, NoneTypes, NaNs: At this point, if extractor cannot find any value code will save it to a DataFrame. 
+- Extractor failures will be handles and Null/NaN/NoneTypes are still stored in a dataframe. 
 - Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
 
 
@@ -82,10 +82,9 @@ Implement any kind of actual predicition models that uses the features to give p
         - HTTP or HTTPS -> HTTPS is more secure.
             - However, in last years there have been more and more phishing sites with https protocol [3]. 
 - Examples of other feature categories
-    - Content based: 
-        - Background might be just a screenshot of the target page. 
-            - Not a lot of text content in the page. 
-            - Are the same words used in content and in domain. 
+    - Content based features: 
+        - Background of a phishing page might be just a screenshot of the target page. 
+            - In this case: not a lot of text content or text inputs in the page. 
          - Keyterm extraction
              - Usage of starting and landing main level domain (MLD)
                 - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
