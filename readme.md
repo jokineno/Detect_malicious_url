@@ -51,13 +51,14 @@ Implement any kind of actual predicition models that uses the features to give p
 3. Domain history
     - age of the domain: Integer
         - The most of the phishing sites are alive a really short period of time
-    - ownership period: start and end
     - country: String
         - Try to find out if IP comes from a 'high-risk' country.
         - See https://payapi.io/apidoc/#api-Fraud-isIpTop10HighRiskCountry
 4. Content based features
     - Number of input fields and text fields: Integer
-    
+    - a number of HREFs in a html source code
+        - Trying to figure out if Phishing sites has a different amount of external links. 
+ 
 
 ### Storing data
 - Data Structure: DataFrame by Pandas
