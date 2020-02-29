@@ -8,7 +8,6 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 #### What we don't expect
 Implement a humangous set of features.
-
 Implement any kind of actual predicition models that uses the features to give predictions on malicousness at this stage 
 
 
