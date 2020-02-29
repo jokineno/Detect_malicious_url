@@ -1,10 +1,15 @@
-### Assignment
+## Assignment
 - In this assignment you as a HoxHunt Data Science Hunter are given the task to extract interesting features from a possible malicious indicator of compromise, more specifically in this case from a given potentially malicious URL.
 
 #### What we expect
 Investigate potential features you could extract from the given URL and implement extractors for the ones that interest you the most. Below example code extracts one feature but does not store it very efficiently (just console logs it). Implement sensible data structure using some known data structure library to store the features per URL. Also consider how would you approach error handling if one feature extractor fails?
 
 Be prepared to discuss questions such as: what features could indicate the malicousness of a given URL? What goes in to the thinking of the attacker when they are choosing a site for an attack? What would you develop next?
+
+#### What we don't expect
+Implement a humangous set of features.
+
+Implement any kind of actual predicition models that uses the features to give predictions on malicousness at this stage 
 
 
 ### What I'm going to do:
@@ -29,9 +34,9 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 ### Categories: URL based, BlackLists, WHOIS based
 1.  URL based features
-    - protocol: http or https
+    - protocol: HTTP or HTTPS
         - There are more and more phishing sites which are using https [3].
-    - a count of dots in fqdn (Fully Qualified Domain Name): integer 
+    - a count of dots in FQDN (Fully Qualified Domain Name): integer 
     - a length of url: integer
         - This seems to be a trivial but interesting and never returns Null. 
     - a length of Fully Qualified Domain Name (FQDN): integer
