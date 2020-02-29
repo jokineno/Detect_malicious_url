@@ -10,15 +10,16 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ### What I'm going to do:
 - Build feature extractors which could predict a risk of web page being malicious
 - Handle errors in extracting process
-    - Store data anyway -> NaNs are valuable information as well at this point.
-- Build a small dataset based on features
+    - Store data in alla cases -> NaNs are valuable information as well at this point.
+- Build a small dataset based on features and save it into .csv.
 
 
-## FEATURES
-- Features below are based on findings in provided papers and my own interest, bias and preconceptions about them. 
+## Features
+- Predicting features below are based on findings in provided papers and my own interest, bias and preconceptions about them. 
 - The most of the papers discovered that combining features from different categories gives the best prediction accuracy [1,2]. 
     - Single best predicting category is URL based features [1]
     - Also all features are language independent
+    - I will combine Url based features, blacklists, ownership details: age
     
 
 ### Categories
@@ -49,8 +50,9 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 ### Storing data
 
-- Data Structure: DataFrame by Pandas, permanent storing can be done by saving in .csv format with df.to_csv() function.
-- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value code will save it to a DataFrame. It's also a valuable information. 
+- Data Structure: DataFrame by Pandas
+    - Permanent storing in .csv format -> can be done with df.to_csv() function provided by Pandas .
+- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value code will save it to a DataFrame. 
 - Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
 
 
@@ -63,24 +65,34 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 ## 1. Features indicating the maliciousness of a given URL?
 - URL based features are the single best predictor [1]
-- However, best results are achieved when combining features from different categories [1,2]. 
+    - Phishing site URLs might look vague, they can have many redirections or emails included. 
+- Content based
+    - Also the content of the page vary from the target page.  
+    - Background might be just a screenshot of the target page. 
+- Protocol
+    - http or https -> https is more secure but more and more phishing sites succeed in getting a https protocol.
+    - It is still a good indicator.
+- The best results are achieved when combining features from different categories [1,2]. 
 
-## 2. Attackers thinking
+
+
+## 2. Attackers' flow of thought: Make Things Look and Feel the Same!
 - Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
 - Attackers' main goal is to get a user to a fake page and make a user to think this is the real target page. 
-- Fake sites are usually alive for a short time so typically target sites are the ones with high traffic.
-- The power of phishes come from statistical probability -> phishers may send thousands or tens of thousands of emails and some of them will be tricked! 
+- Fake sites are usually alive for a short time. Typically target sites are the ones (enterprises) with a high traffic [3].
+- The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of people will buy it! 
 - Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
-- Basically, the weakest link in the security chain is a human. Attacker tries to trick users cognition. 
+    - Basically, the weakest link in a security chain is a human. An attacker tries to trick a user's cognition. 
 
 
 ## 3. What next? 
-- In general: read more articles, learn more, understand better -> faster decision making. 
-### High quality of data
+- In general: read more articles, learn more, understand more -> faster decision making. 
+### Achieve a higher quality of data
+- Motto: diamonds in, diamonds out.
 - Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a web page is a phishing site or not.
 - I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
 
-### API
+### Combine APIs
 - Use another API such as www.whois.net in order to get more and more detailed informations. 
     - In this task input.payapi was a good one since it does not require authentication and code can be run by anyone without authentication. 
 - Combine information from different APIs -> higher level of certainty of a quality of data
@@ -88,17 +100,17 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 ### Preprocess data
 - For example:
-    - mapping categorical values into numerical such as http/https -> 0/1
-    - handle missing values by estimating or removing: this is a data set size dependent. 
+    - Mapping categorical values into numerical such as http/https -> 0/1
+    - Handle missing values: estimate or delete: this is a data set size dependent. 
 
 ### Define metrics: 
-- For example: compare accuracy of the model to blacklist systems such as Google SafeBrowsing or PhishTank
+- How I measure the accuracy of my model: train a model, validate it and test it with a test set. 
+- Get data from PhishTank for example. 
 
 
 ### Build a model
-- Build a classifier: for example Random Forest gave good results in detecting phishing site [2]
+- Build a classifier: for example Random Forest performed well in detecting phishing sites [2]
 - Try out different models and compare their performance. 
-
 
 
 # References
