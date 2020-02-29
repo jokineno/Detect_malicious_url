@@ -120,6 +120,8 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ### Achieve a higher quality of data
 - Motto: garbage in, garbage out / gold in, gold out
+- At the moment for example the blacklist column contains only NaNs -> that does not help in predicting. 
+     -> Find more features without only None values.
 - Extract more features: based on the most of the provided articles the multi-criteria methods combining features from different categories works the best in predicting a phishing page [1,2]. 
 - I liked the idea of "Know Your Phish" [1] where all features are language independent. I would focus on those features.
 
