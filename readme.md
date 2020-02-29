@@ -91,27 +91,28 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ## 2. Attackers' flow of thought: Make Things Look and Feel the Same!
 - There are many types of ways to phish information. 
-    - Nearly 50% of phone calls will be scams [3]
-    - DNS Spoofing, Email Spoofing, Social engineering [1]
+    - Phone calls: Nearly 50% of phone calls will be scams [3]
+    - Impersonating techiques: DNS Spoofing, Email Spoofing, Social engineering [1]
 
 ### Social Engineering: trick user's cognition! 
 - The weakest link in a security chain is a human. An attacker tries to trick a user's cognition. 
+- The most of the attacks start with an email and people have hard time to detect a real from a fake one [4]. 
 - Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
-- Attackers' main goal is to drive a user to a fake page from an email link (for example) and make the user to think this is the real target page. In this case user might get tricked to hand over sensitive information: personal information, credit card number etc. 
+- Attackers' main goal is to drive a user to a fake page and make the user to think this is the real target page. In this case user might get tricked to hand over sensitive information: personal information, credit card number etc. 
 - Fake sites are usually alive for a short time. Typically target sites are the ones (enterprises) with a high traffic [3].
     - The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of people will buy it! 
 - Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
-    
+
 
 
 ## 3. What next? 
-- In general: read more articles, learn more, understand more -> faster decision making. 
-- I would gather more data from different sources, preprocess it, define metrics and then try out different models and see which performs the best. 
+- In general, I will: read more articles, learn more, understand more -> faster decision making. 
+- I would gather more data from different sources, preprocess it, define metrics for model performance and then try out different models and see which performs the best. 
 
 ### Achieve a higher quality of data
-- Motto: FROM shit in, shit out TO diamonds in, diamonds out
-- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a web page is a phishing site or not [1,2]. 
-- I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
+- Motto: garbage in, garbage out / gold in, gold out
+- Extract more features: based on the most of the provided articles the multi-criteria methods combining features from different categories works the best in predicting a phishing page [1,2]. 
+- I liked the idea of "Know Your Phish" [1] where all features are language independent. I would focus on those features.
 
 ### Combine APIs
 - Use another API such as www.whois.net in order to get more and more detailed informations. 
@@ -121,13 +122,12 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ### Preprocess data
 - For example:
-    - Mapping categorical values into numerical such as http/https -> 0/1
-    - Handle missing values: estimate or delete: this is a data set size dependent. 
+    - Mapping categorical values into numericals such as HTTP/HTTPS -> 0/1
+    - Handle missing values: estimate or delete: this depends on a size of a dataset
 
 ### Define metrics: 
 - How I measure the accuracy of my model: train a model, validate it and test it with a test set. 
-- Get data from PhishTank for example. 
-
+- Get sample URLs from PhishTank for example. 
 
 ### Build a model
 - Build a classifier: for example Random Forest performed well in detecting phishing sites [2]
@@ -138,4 +138,5 @@ Implement any kind of actual predicition models that uses the features to give p
 
 - [1] Marchal, Samuel & Saari, Kalle & Singh, Nidhi & Asokan, N.. (2016). Know Your Phish: Novel Techniques for Detecting Phishing Sites and Their Targets. 323-333. 10.1109/ICDCS.2016.10. Also:https://arxiv.org/pdf/1510.06501.pdf
 - [2] A. Aggarwal, A. Rajadesingan, and P. Kumaraguru, “PhishAri: Automatic Realtime Phishing Detection on Twitter.” 2013. Also https://arxiv.org/pdf/1301.6899.pdf
-- [3] HoxHunt, Also: https://www.hoxhunt.com/blog/statistics-showing-5-phishing-trends-for-2019/ 
+- [3] HoxHunt Blog 1, Also: https://www.hoxhunt.com/blog/statistics-showing-5-phishing-trends-for-2019/ 
+- [4] HoxHunt Blog 2, Also: https://www.hoxhunt.com/blog/phishing-attacks-and-scams-in-2019-and-beyond/
