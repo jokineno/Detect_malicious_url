@@ -16,7 +16,7 @@ Implement any kind of actual predicition models that uses the features to give p
 - Extract 10-15 features. 
     - Use APIs
     - Use Beautiful Soup library for web scraping
-- Handle errors in extracting process: return NaN if error occurs, also save the error message. 
+- Handle errors in extracting process: return NaN if error occurs, also save the error message.
     - Store data in all cases -> NaNs are valuable information as well at this point.
 - Build a small dataset based on features and save it into .csv.
 
@@ -76,24 +76,23 @@ Implement any kind of actual predicition models that uses the features to give p
 
 
 ## 1. Features indicating the maliciousness of a given URL?
-- The best results are achieved when combining features from different categories [1,2]. 
 - URL based features are the single best predictor [1]
-    - Phishing site URLs might look vague, they can have many redirections or emails included. 
+    - Different elements in URL (string): see above "categories"
     - Protocol
         - HTTP or HTTPS -> HTTPS is more secure.
-        - However, in last years there have been more and more phishing sites with https protocol [3]. 
+            - However, in last years there have been more and more phishing sites with https protocol [3]. 
 - Examples of other feature categories
-    - Content based
-    - Background might be just a screenshot of the target page. 
-        - Not a lot of text content in the page. 
-        - Are the same words used in content and in domain. 
-     - Keyterm extraction
-         - Usage of starting and landing main level domain (MLD)
-            - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
-         - Registered Domain Name (RDN) usage [1]
-            - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
-            - Phishing pages uses longer redirection chains and there's more variance in rdn usage compared to real pages [1]
-        
+    - Content based: 
+        - Background might be just a screenshot of the target page. 
+            - Not a lot of text content in the page. 
+            - Are the same words used in content and in domain. 
+         - Keyterm extraction
+             - Usage of starting and landing main level domain (MLD)
+                - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
+             - Registered Domain Name (RDN) usage [1]
+                - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
+                - Phishing pages uses longer redirection chains and there's more variance in rdn usage compared to real pages [1]
+
 
 
 
