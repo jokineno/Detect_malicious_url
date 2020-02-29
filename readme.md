@@ -52,28 +52,25 @@ Implement any kind of actual predicition models that uses the features to give p
         - Use https://input.payapi.io
 3. Domain history
     - An age of the domain: Integer
-        - The most of the phishing sites are alive a really short period of time
+        - The most of phishing sites are alive a really short period of time
     - Country: String
         - Try to find out if IP comes from a 'high-risk' country.
         - See https://payapi.io/apidoc/#api-Fraud-isIpTop10HighRiskCountry
 4. Content based features
     - a number of HREFs in a html source code
-        - Trying to figure out if Phishing sites has a different amount of external links. 
+        - Trying to figure out if phishing sites has a different amount of outgoing links. 
  
 
 ### Storing data
 - Data Structure: DataFrame by Pandas
     - Permanent storing in .csv format -> can be done with df.to_csv() function provided by Pandas .
-- Extractor failures will be handles and Null/NaN/NoneTypes are still stored in a dataframe. 
-- Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
-
-
+- Extractor failures will be handles and NULL/NaN/NoneTypes are still stored in a dataframe. 
+- Later, in model building stage I have to preprocess the data: for example:  mapping of categorical values into numerical.
 
 # Questions:
 1. What features could indicate the malicousness of a given URL?
 2. What goes in to the thinking of the attacker when they are choosing a site for an attack?
 3. What would you develop next?
-
 
 ## 1. Features indicating the maliciousness of a given URL?
 - URL based features are the single best predictor [1]
@@ -91,8 +88,6 @@ Implement any kind of actual predicition models that uses the features to give p
              - Registered Domain Name (RDN) usage
                 - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
                 - Phishing pages uses longer redirection chains and there are more variance in rdn usage on phishing pages compared to real pages [1]
-
-
 
 
 ## 2. Attackers' flow of thought: Make Things Look and Feel the Same!
@@ -127,7 +122,6 @@ Implement any kind of actual predicition models that uses the features to give p
 - Combine information from several APIs or find an API that already does that: make sure data quality is ok! 
     - In this task input.payapi was a good one, since it does not require authentication and code can be run by anyone without personal API keys etc. 
 
-
 ### Preprocess data
 - Mapping categorical values into numericals such as HTTP/HTTPS -> 0/1
 - Handle missing values: estimate or delete: this depends on a size of a dataset
@@ -140,9 +134,7 @@ Implement any kind of actual predicition models that uses the features to give p
 - Build a classifier: for example Random Forest performed well in detecting phishing sites [2]
 - Try out different models and compare their performance. 
 
-
 # References
-
 - [1] Marchal, Samuel & Saari, Kalle & Singh, Nidhi & Asokan, N.. (2016). Know Your Phish: Novel Techniques for Detecting Phishing Sites and Their Targets. 323-333. 10.1109/ICDCS.2016.10. Also:https://arxiv.org/pdf/1510.06501.pdf
 - [2] A. Aggarwal, A. Rajadesingan, and P. Kumaraguru, “PhishAri: Automatic Realtime Phishing Detection on Twitter.” 2013. Also https://arxiv.org/pdf/1301.6899.pdf
 - [3] HoxHunt Blog 1, Also: https://www.hoxhunt.com/blog/statistics-showing-5-phishing-trends-for-2019/ 
