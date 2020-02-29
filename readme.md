@@ -118,6 +118,9 @@ Implement any kind of actual predicition models that uses the features to give p
 - Extract more features: based on the most of the provided articles the multi-criteria methods combining features from different categories works the best in predicting a phishing page [1,2]. 
 - I liked the idea of "Know Your Phish" [1] where all features are language independent. I would focus on those features.
 
+### Intuition over data
+- Draw histograms, plots, find out correlations between features in order to get a intuition what is happening in the data. 
+
 ### Combine APIs
 - Use another API such as www.whois.net in order to get more and more detailed informations. 
     - In this task input.payapi was a good one since it does not require authentication and code can be run by anyone without authentication. 
@@ -131,7 +134,7 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ### Define metrics: 
 - How I measure the accuracy of my model: train a model, validate it and test it with a test set. 
-- Get sample URLs from PhishTank for example. 
+- Get sample URLs from PhishTank or other similar database. 
 
 ### Build a model
 - Build a classifier: for example Random Forest performed well in detecting phishing sites [2]
