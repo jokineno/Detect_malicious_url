@@ -35,17 +35,18 @@ Implement any kind of actual predicition models that uses the features to give p
 1.  URL based features
     - protocol: HTTP or HTTPS
         - There are more and more phishing sites which are using https [3].
-    - a count of dots in FQDN (Fully Qualified Domain Name): integer 
+    - a count of dots in FQDN (Fully Qualified Domain Name): integer
+        - There are more dots in FQDN in phishing sited [2]
     - a length of url: integer
         - This seems to be a trivial but interesting and never returns Null. 
     - a length of Fully Qualified Domain Name (FQDN): integer
-        - if Top Level Domain is used then FQDNs are typically longer [1]
+        - Phishing site domains are typically shorter [2]
     - a number of redirections: integer
         - Many redirection can be used to evade the blacklists.
 2. Blacklists
     - is ip on blacklist: Boolean
     - is ip proxy: lookup Boolean
-3. WHOIS based features
+3. Domain history
     - age of the domain: Integer
         - The most of the phishing sites are alive a really short period of time
     - ownership period: start and end
