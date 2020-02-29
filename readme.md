@@ -77,7 +77,7 @@ Implement any kind of actual predicition models that uses the features to give p
     - Phishing site URLs might look vague, they can have many redirections or emails included. 
     - Protocol
         - HTTP or HTTPS -> HTTPS is more secure.
-        - However, in last years there have been more and more phishing sites with https protocol. 
+        - However, in last years there have been more and more phishing sites with https protocol [3]. 
 - Examples of other feature categories
     - Content based
     - Background might be just a screenshot of the target page. 
