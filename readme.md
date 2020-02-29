@@ -8,10 +8,15 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 
 ### What I'm going to do:
-- Build feature extractors which could predict a risk of web page being malicious
-- Handle errors in extracting process
-    - Store data in alla cases -> NaNs are valuable information as well at this point.
+- Build feature extractors, which could predict a risk of web page being malicious
+- Extract 10-15 features. 
+- Handle errors in extracting process: return NaN if error occurs, also save the error message. 
+    - Store data in all cases -> NaNs are valuable information as well at this point.
 - Build a small dataset based on features and save it into .csv.
+
+### What I'm NOT going to do
+- Not too many features!
+- No modeling at this point! 
 
 
 ## Features
@@ -22,7 +27,7 @@ Be prepared to discuss questions such as: what features could indicate the malic
     - I will combine Url based features, blacklists, ownership details: age
     
 
-### Categories
+### Categories: URL based, BlackLists, WHOIS based
 1.  URL based features
     - protocol: http or https
         - There are more and more phishing sites which are using https [3].
@@ -49,10 +54,9 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 
 ### Storing data
-
 - Data Structure: DataFrame by Pandas
     - Permanent storing in .csv format -> can be done with df.to_csv() function provided by Pandas .
-- Handling NULLs, NoneTypes, NaNs: At this point if extractor cannot find any value code will save it to a DataFrame. 
+- Handling NULLs, NoneTypes, NaNs: At this point, if extractor cannot find any value code will save it to a DataFrame. 
 - Later, in model building stage I have to preprocess data more carefully and also map categorical values into numerical.
 
 
@@ -66,30 +70,41 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ## 1. Features indicating the maliciousness of a given URL?
 - URL based features are the single best predictor [1]
     - Phishing site URLs might look vague, they can have many redirections or emails included. 
+    - Protocol
+        - http or https -> https is more secure but more and more phishing sites succeed in getting a https protocol.
+        - It is still a good indicator.
 - Content based
     - Also the content of the page vary from the target page.  
     - Background might be just a screenshot of the target page. 
-- Protocol
-    - http or https -> https is more secure but more and more phishing sites succeed in getting a https protocol.
-    - It is still a good indicator.
+        - Not a lot of text content in the page. 
+    - Are the same words used in content and in domain. 
+
 - The best results are achieved when combining features from different categories [1,2]. 
 
 
 
 ## 2. Attackers' flow of thought: Make Things Look and Feel the Same!
+- There are many types of ways to phish information. 
+    - Nearly 50% of phone calls will be scams [3]
+    - DNS Spoofing, Email Spoofing, Social engineering [1]
+
+### Social Engineering: trick user's cognition! 
+- The weakest link in a security chain is a human. An attacker tries to trick a user's cognition. 
 - Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
-- Attackers' main goal is to get a user to a fake page and make a user to think this is the real target page. 
+- Attackers' main goal is to drive a user to a fake page from an email link (for example) and make the user to think this is the real target page. In this case user might get tricked to hand over sensitive information: personal information, credit card number etc. 
 - Fake sites are usually alive for a short time. Typically target sites are the ones (enterprises) with a high traffic [3].
-- The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of people will buy it! 
+    - The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of people will buy it! 
 - Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
-    - Basically, the weakest link in a security chain is a human. An attacker tries to trick a user's cognition. 
+    
 
 
 ## 3. What next? 
 - In general: read more articles, learn more, understand more -> faster decision making. 
+- I would gather more data from different sources, preprocess it, define metrics and then try out different models and see which performs the best. 
+
 ### Achieve a higher quality of data
-- Motto: diamonds in, diamonds out.
-- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a web page is a phishing site or not.
+- Motto: FROM shit in, shit out TO diamonds in, diamonds out
+- Extract more features: based on the most of the papers the multi-criteria methods: combine features from different categories works the best in predicting if a web page is a phishing site or not [1,2]. 
 - I liked the idea of "Know your phish" [1] where all features are language independent. I would focus on those features.
 
 ### Combine APIs
