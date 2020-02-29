@@ -1,13 +1,16 @@
-	url	protocol	url_length	num_of_dots_fqdn	fqdn_length	age	country	isIpBlacklisted	isIpProxy	redirects	error
-0	https://www.slideshare.net/weaveworks/client-side-monitoring-with-prometheus	https	76	2	18	5077	United States	False	False	0	
-1	http://cartaobndes.gov.br.cv31792.tmweb.ru/	http	43	5	35	4991	Russia	False	False	?	
-2	https://paypal.co.uk.yatn.eu/m/	https	31	4	20					?	NoDomainAgeData
-3	http://college-eisk.ru/cli/	http	27	1	15	3059	Russia	False	False	0	
-4	https://dotpay-platnosc3.eu/dotpay/	https	35	1	19					?	NoDomainAgeData
-5	https://yakbstains.cloudaccess.host/index.html	https	46	2	27					0	InternalServerError
-6	https://muskdrop.vip	https	20	1	12	4				?	
-7	http://unvisored-destinati.000webhostapp.com/	http	45	2	37	1387	United States	False	False	0	
-8	http://gabungvideoviral77.000webhostapp.com/login.php	http	53	2	36	1387	United States	False	False	0	
-9	https://www.google.com/url?sa=t&ectrans=1&cd=3&rct=j&cad=rja&usg=AOvVaw0_9EI52uq3vapizMNgByf0&url=http%3A//nextsteppk.com/courselist&q=&ved=2ahUKEwi-rviTieHnAhXF7eAKHVLFD6AQFjACegQIBhAB&source=web&uact=8&esrc=s	https	210	2	14	8201	United States	False	False	0	
-10	https://www.tiktok.com/ar/	https	26	2	14	8622	Singapore	False	False	0	
-11	https://www.disneyworld.eu/login/?returnUrl=/profile/	https	53	2	18					0	NoDomainAgeData
+	url	protocol	url_length	num_of_dots_fqdn	fqdn_length	num_of_links (href)	age	country	blacklist	isIpProxy	redirects	error
+0	http://carnavalacabomaistemosessaslindas.com/2.2.19-beta/mobile/login.php?enc=1	http	79	1	37	40	2	Singapore	False	False	0	
+1	https://www.slideshare.net/weaveworks/client-side-monitoring-with-prometheus	https	76	2	18	135	5078	United States	False	False	0	
+2	http://cartaobndes.gov.br.cv31792.tmweb.ru/	http	43	5	35		4993	Russia	False	False		
+3	https://paypal.co.uk.yatn.eu/m/	https	31	4	20				False			NoDomainAgeData
+4	http://college-eisk.ru/cli/	http	27	1	15	0	3061	Russia	False	False	0	
+5	https://dotpay-platnosc3.eu/dotpay/	https	35	1	19				False			NoDomainAgeData
+6	https://yakbstains.cloudaccess.host/index.html	https	46	2	27	2			False		0	InternalServerError
+7	https://muskdrop.vip	https	20	1	12		6		False			
+8	http://unvisored-destinati.000webhostapp.com/	http	45	2	37	8	1389	United States	False	False	0	
+9	http://gabungvideoviral77.000webhostapp.com/login.php	http	53	2	36	8	1389	United States	False	False	0	
+10	https://www.google.com/url?sa=t&ectrans=1&cd=3&rct=j&cad=rja&usg=AOvVaw0_9EI52uq3vapizMNgByf0&url=http%3A//nextsteppk.com/courselist&q=&ved=2ahUKEwi-rviTieHnAhXF7eAKHVLFD6AQFjACegQIBhAB&source=web&uact=8&esrc=s	https	210	2	14	2	8202	United States	False	False	0	
+11	https://www.tiktok.com/ar/	https	26	2	14	72	8623	Singapore	False	False	0	
+12	https://www.disneyworld.eu/login/?returnUrl=/profile/	https	53	2	18	26			False		0	NoDomainAgeData
+13	https://dvla.co.uk-refund-form-feb27.info/	https	42	3	33		2		False			
+14	http://getrufd.net/index.ph= p?id=3Dkoi@%cd%lkf.aspx?54fa654fa65a654fa6a654fa6a654fa6a654fa6	http	92	1	11	26	109	United States	False	False	1	
