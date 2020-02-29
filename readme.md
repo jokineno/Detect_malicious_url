@@ -22,20 +22,21 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ## Features
 - Predicting features below are based on findings in provided papers and my own interest, bias and preconceptions about them. 
 - The most of the papers discovered that combining features from different categories gives the best prediction accuracy [1,2]. 
-    - Single best predicting category is URL based features [1]
-    - Also all features are language independent
-    - I will combine Url based features, blacklists, ownership details: age
+    - The single best predicting category is URL based features [1]
+    - All features are language independent: no need to model a language detectors and independent models. 
+    - I will combine features from different categories. 
     
 
 ### Categories: URL based, BlackLists, WHOIS based
 1.  URL based features
     - protocol: http or https
         - There are more and more phishing sites which are using https [3].
-    - count of dots in fqdn (Fully Qualified Domain Name): integer 
-    - length of url: integer
-    - length of Fully Qualified Domain Name (FQDN): integer
+    - a count of dots in fqdn (Fully Qualified Domain Name): integer 
+    - a length of url: integer
+        - This seems to be a trivial but interesting and never returns Null. 
+    - a length of Fully Qualified Domain Name (FQDN): integer
         - if Top Level Domain is used then FQDNs are typically longer [1]
-    - number of redirections: integer
+    - a number of redirections: integer
         - Many redirection can be used to evade the blacklists.
 2. Blacklists
     - is ip on blacklist: Boolean
