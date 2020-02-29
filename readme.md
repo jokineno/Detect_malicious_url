@@ -128,15 +128,13 @@ Implement any kind of actual predicition models that uses the features to give p
 - Draw histograms, plots, find out correlations between features in order to get a intuition what is happening in the data. 
 
 ### Combine APIs
-- Use another API such as www.whois.net in order to get more and more detailed informations. 
-    - In this task input.payapi was a good one since it does not require authentication and code can be run by anyone without authentication. 
-- Combine information from different APIs -> higher level of certainty of a quality of data
-    - For example: double check blacklists. 
+- Combine information from several APIs or find an API that already does that: make sure data quality is ok! 
+    - In this task input.payapi was a good one, since it does not require authentication and code can be run by anyone without personal API keys etc. 
+
 
 ### Preprocess data
-- For example:
-    - Mapping categorical values into numericals such as HTTP/HTTPS -> 0/1
-    - Handle missing values: estimate or delete: this depends on a size of a dataset
+- Mapping categorical values into numericals such as HTTP/HTTPS -> 0/1
+- Handle missing values: estimate or delete: this depends on a size of a dataset
 
 ### Define metrics: 
 - How I measure the accuracy of my model: train a model, validate it and test it with a test set. 
