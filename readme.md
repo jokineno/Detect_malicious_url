@@ -74,18 +74,23 @@ Implement any kind of actual predicition models that uses the features to give p
 
 
 ## 1. Features indicating the maliciousness of a given URL?
+- The best results are achieved when combining features from different categories [1,2]. 
 - URL based features are the single best predictor [1]
     - Phishing site URLs might look vague, they can have many redirections or emails included. 
     - Protocol
         - http or https -> https is more secure but more and more phishing sites succeed in getting a https protocol.
         - It is still a good indicator.
-- Content based
-    - Also the content of the page vary from the target page.  
+- Examples of other feature categories
+    - Content based
     - Background might be just a screenshot of the target page. 
         - Not a lot of text content in the page. 
-    - Are the same words used in content and in domain. 
-
-- The best results are achieved when combining features from different categories [1,2]. 
+        - Are the same words used in content and in domain. 
+     - Usage of starting and landing main level domain (mld)
+        - MLDs typically appears in several sources extracted from a target page where as in a phishing page not [1].
+     - Registered Domain Name (RDN) usage [1]
+        - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
+        - Phishing pages uses longer redirection chains and there's more variance in rdn usage [1]
+        
 
 
 
