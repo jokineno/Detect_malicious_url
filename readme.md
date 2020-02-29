@@ -23,17 +23,22 @@ Be prepared to discuss questions such as: what features could indicate the malic
 ### Categories
 1.  URL based features
     - protocol: http or https
+        - There are more and more phishing sites which are using https [3].
     - count of dots in fqdn (Fully Qualified Domain Name): integer 
-    - length of url: integer ok
-    - length of Fully Qualified Domain Name (FQDN): integer ok
+    - length of url: integer
+    - length of Fully Qualified Domain Name (FQDN): integer
+        - if Top Level Domain is used then FQDNs are typically longer [1]
     - number of redirections: integer
+        - Many redirection can be used to evade the blacklists.
 2. Blacklists
     - is ip on blacklist: Boolean
     - is ip proxy: lookup Boolean
 3. WHOIS based features
     - age of the domain: Integer
+        - The most of the phishing sites are alive a really short period of time
     - ownership period: start and end
-    - country: String -> there are high risk countries and later I can use that information to classify the danger of the IP.
+    - country: String
+        - Try to find out if IP comes from a 'high-risk' country.
 4. Content based features
     - Number of input fields and text fields: Integer
     
@@ -99,5 +104,4 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 - [1] Marchal, Samuel & Saari, Kalle & Singh, Nidhi & Asokan, N.. (2016). Know Your Phish: Novel Techniques for Detecting Phishing Sites and Their Targets. 323-333. 10.1109/ICDCS.2016.10. Also:https://arxiv.org/pdf/1510.06501.pdf
 - [2] A. Aggarwal, A. Rajadesingan, and P. Kumaraguru, “PhishAri: Automatic Realtime Phishing Detection on Twitter.” 2013. Also https://arxiv.org/pdf/1301.6899.pdf
-
-
+- [3] HoxHunt, Also: https://www.hoxhunt.com/blog/statistics-showing-5-phishing-trends-for-2019/ 
