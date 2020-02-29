@@ -77,10 +77,10 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ## 1. Features indicating the maliciousness of a given URL?
 - URL based features are the single best predictor [1]
-    - Different elements in URL (string): see above "categories"
+    - Different elements in URL (string): see above "Categories"
     - Protocol
         - HTTP or HTTPS -> HTTPS is more secure.
-            - However, in last years there have been more and more phishing sites with https protocol [3]. 
+            - However, in last years there have been more and more phishing pages with https protocol [3]. 
 - Examples of other feature categories
     - Content based features: 
         - A background of a phishing page might be just a screenshot of the target page. 
@@ -88,9 +88,9 @@ Implement any kind of actual predicition models that uses the features to give p
          - Keyterm extraction
              - A usage of starting and landing main level domain (MLD)
                 - MLD (string) typically appears in several sources extracted from a target page where as in phishing page not [1].
-             - Registered Domain Name (RDN) usage [1]
+             - Registered Domain Name (RDN) usage
                 - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
-                - Phishing pages uses longer redirection chains and there's more variance in rdn usage compared to real pages [1]
+                - Phishing pages uses longer redirection chains and there are more variance in rdn usage on phishing pages compared to real pages [1]
 
 
 
@@ -103,13 +103,11 @@ Implement any kind of actual predicition models that uses the features to give p
 ### Social Engineering: trick user's cognition! 
 - The weakest link in a security chain is a human. An attacker tries to trick a user's cognition. 
 - The most of the attacks start with an email and people have hard time to detect a real from a fake one [4]. 
-- Typical example of phishing site is web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
+- A typical example of a phishing site is a web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
 - Attackers' main goal is to drive a user to a fake page and make the user to think this is the real target page. In this case user might get tricked to hand over sensitive information: personal information, credit card number etc. 
 - Fake sites are usually alive for a short time. Typically target sites are the ones (enterprises) with a high traffic [3].
     - The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of people will buy it! 
 - Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
-
-
 
 ## 3. What next? 
 - In general, I will: read more articles, learn more, understand more -> faster decision making. 
