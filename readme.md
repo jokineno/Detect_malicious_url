@@ -83,11 +83,11 @@ Implement any kind of actual predicition models that uses the features to give p
             - However, in last years there have been more and more phishing sites with https protocol [3]. 
 - Examples of other feature categories
     - Content based features: 
-        - Background of a phishing page might be just a screenshot of the target page. 
-            - In this case: not a lot of text content or text inputs in the page. 
+        - A background of a phishing page might be just a screenshot of the target page. 
+            - In this case: not a lot of text content or text inputs on the page. 
          - Keyterm extraction
-             - Usage of starting and landing main level domain (MLD)
-                - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
+             - A usage of starting and landing main level domain (MLD)
+                - MLD (string) typically appears in several sources extracted from a target page where as in phishing page not [1].
              - Registered Domain Name (RDN) usage [1]
                 - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
                 - Phishing pages uses longer redirection chains and there's more variance in rdn usage compared to real pages [1]
