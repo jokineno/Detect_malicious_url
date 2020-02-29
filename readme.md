@@ -47,7 +47,9 @@ Implement any kind of actual predicition models that uses the features to give p
         - Many redirection can be used to evade the blacklists.
 2. Blacklists
     - is ip on blacklist: Boolean
+         - Use IPSUM list: see https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt
     - is ip proxy: lookup Boolean
+        - Use https://input.payapi.io
 3. Domain history
     - age of the domain: Integer
         - The most of the phishing sites are alive a really short period of time
