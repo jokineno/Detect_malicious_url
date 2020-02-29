@@ -78,15 +78,15 @@ Implement any kind of actual predicition models that uses the features to give p
 - URL based features are the single best predictor [1]
     - Phishing site URLs might look vague, they can have many redirections or emails included. 
     - Protocol
-        - http or https -> https is more secure but more and more phishing sites succeed in getting a https protocol.
-        - It is still a good indicator.
+        - HTTP or HTTPS -> HTTPS is more secure.
+        - However, in last years there have been more and more phishing sites with https protocol. 
 - Examples of other feature categories
     - Content based
     - Background might be just a screenshot of the target page. 
         - Not a lot of text content in the page. 
         - Are the same words used in content and in domain. 
      - Keyterm extraction
-         - Usage of starting and landing main level domain (mld)
+         - Usage of starting and landing main level domain (MLD)
             - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
          - Registered Domain Name (RDN) usage [1]
             - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
@@ -98,7 +98,7 @@ Implement any kind of actual predicition models that uses the features to give p
 ## 2. Attackers' flow of thought: Make Things Look and Feel the Same!
 - There are many types of ways to phish information. 
     - Phone calls: Nearly 50% of phone calls will be scams [3]
-    - Impersonating techiques: DNS Spoofing, Email Spoofing, Social engineering [1]
+    - Impersonating techiques: DNS spoofing, email spoofing, social engineering [1]
 
 ### Social Engineering: trick user's cognition! 
 - The weakest link in a security chain is a human. An attacker tries to trick a user's cognition. 
