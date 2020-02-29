@@ -9,7 +9,8 @@ Be prepared to discuss questions such as: what features could indicate the malic
 
 ### What I'm going to do:
 - Build feature extractors which could predict a risk of web page being malicious
-- Handle errors in extracting
+- Handle errors in extracting process
+    - Store data anyway -> NaNs are valuable information as well at this point.
 - Build a small dataset based on features
 
 
