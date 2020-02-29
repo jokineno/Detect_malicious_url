@@ -85,11 +85,12 @@ Implement any kind of actual predicition models that uses the features to give p
     - Background might be just a screenshot of the target page. 
         - Not a lot of text content in the page. 
         - Are the same words used in content and in domain. 
-     - Usage of starting and landing main level domain (mld)
-        - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
-     - Registered Domain Name (RDN) usage [1]
-        - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
-        - Phishing pages uses longer redirection chains and there's more variance in rdn usage compared to real pages [1]
+     - Keyterm extraction
+         - Usage of starting and landing main level domain (mld)
+            - MLD name typically appears in several sources extracted from target pages where as in phishing pages not [1].
+         - Registered Domain Name (RDN) usage [1]
+            - Similarity between different elements: starting, landing url, redirection chain, loaded content and HREF links. 
+            - Phishing pages uses longer redirection chains and there's more variance in rdn usage compared to real pages [1]
         
 
 
