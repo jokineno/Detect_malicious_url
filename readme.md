@@ -14,6 +14,8 @@ Implement any kind of actual predicition models that uses the features to give p
 ### What I'm going to do:
 - Build feature extractors, which could predict a risk of web page being malicious
 - Extract 10-15 features. 
+    - Use APIs
+    - Use Beautiful Soup library for web scraping
 - Handle errors in extracting process: return NaN if error occurs, also save the error message. 
     - Store data in all cases -> NaNs are valuable information as well at this point.
 - Build a small dataset based on features and save it into .csv.
