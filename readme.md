@@ -52,12 +52,10 @@ Implement any kind of actual predicition models that uses the features to give p
     - ownership period: start and end
     - country: String
         - Try to find out if IP comes from a 'high-risk' country.
+        - See https://payapi.io/apidoc/#api-Fraud-isIpTop10HighRiskCountry
 4. Content based features
     - Number of input fields and text fields: Integer
     
-5. Whitelist
-    - Works as lookup table: Boolean
-
 
 ### Storing data
 - Data Structure: DataFrame by Pandas
