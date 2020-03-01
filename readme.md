@@ -53,10 +53,10 @@ Implement any kind of actual predicition models that uses the features to give p
 3. Domain history
     - An age of a domain: Integer
         - The most of phishing sites are alive a really short period of time
-    - How many days to expire
-         - Is the domain registered only for a short period of time or for a longer time.
+    - How many days to expire: Integer
+         - Phishing sites are not meant to stay alive for a long period of time. 
     - Country: String
-        - Try to find out if IP comes from a 'high-risk' country.
+        - Try to find out if an IP comes from a 'high-risk' country.
         - See https://payapi.io/apidoc/#api-Fraud-isIpTop10HighRiskCountry
 4. Content based features
     - a number of HREFs in a html source code
@@ -79,11 +79,11 @@ Implement any kind of actual predicition models that uses the features to give p
         - HTTP or HTTPS -> HTTPS is more secure.
             - However, in last years there have been more and more phishing pages with https protocol [3]. 
 - Content based features: 
-    - Amount of text inputs, links
+    - An amount of text inputs, links
         - Use of keyterms in a site: how many times title appears on a page attributes. 
     - RDN usage
         - Compare a similarity of starting and landing url
-    - Number of redirections
+    - A number of redirections
         - Phishing site evade blacklists by having a longer redirection chain. 
 
 ## 2. Attackers' line of thought: Make Things Look and Feel the Same!
