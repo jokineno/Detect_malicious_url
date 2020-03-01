@@ -53,6 +53,8 @@ Implement any kind of actual predicition models that uses the features to give p
 3. Domain history
     - An age of a domain: Integer
         - The most of phishing sites are alive a really short period of time
+    - How many days to expire
+         - Is the domain registered only for a short period of time or for a longer time.
     - Country: String
         - Try to find out if IP comes from a 'high-risk' country.
         - See https://payapi.io/apidoc/#api-Fraud-isIpTop10HighRiskCountry
