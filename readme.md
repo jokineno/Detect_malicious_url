@@ -102,12 +102,12 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ## 3. What next? 
 - In general: read more articles, learn more, understand more -> faster decision making. 
-- I would gather more data from different sources, preprocess it, define metrics for model performance and then try out different models and see which performs the best. 
+- I would gather more data from different sources, preprocess it, define metrics for a model performance and then try out different models and see which performs the best. 
 
 ### Achieve a higher quality of data
 - Motto: garbage in, garbage out / gold in, gold out
-- At the moment processed dataset has quite a bit of None values. 
-    - I should find more features that the most of the times give some numerical value but also significant. 
+- At the moment a processed dataset has many None values. 
+    - I should discover more features that returns numerical or categorical value and are significant also. 
 - Extract more features: based on the most of the provided articles the multi-criteria methods combining features from different categories works the best in predicting a phishing page [1,2]. 
 - I liked the idea of "Know Your Phish" [1] where all features are language independent. I would focus on those features.
 
@@ -117,14 +117,15 @@ Implement any kind of actual predicition models that uses the features to give p
 ### Combine APIs
 - Combine information from several APIs or find an API that already does that: make sure that the data quality is ok! 
     - In this task input.payapi was a good one, since it does not require authentication and is free to use. 
+- Problems in a single API: some of the URLs I used in the project were found from Phishtank's blacklist but were not listed on other blacklists such as "Ipsum" or "input.payapi". 
 
 ### Preprocess data
 - Mapping categorical values into numericals such as HTTP/HTTPS -> 0/1
 - Handle missing values: estimate or delete: this depends on a size of a dataset
 
 ### Define metrics: 
-- How I measure the accuracy of my model: train a model, validate it and test it with a test set. 
-- Compare performance to phishing databases: can the model detect the ones that are already blacklisted. 
+- How I measure the accuracy of the model: train a model, validate it and test it with a test set. 
+- Compare a model performance to phishing databases: can the model detect the ones that are already blacklisted. 
 
 ### Build a model
 - Build a classifier: for example Random Forest performed well in detecting phishing sites [2]
