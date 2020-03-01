@@ -37,8 +37,8 @@ Implement any kind of actual predicition models that uses the features to give p
 1.  URL based features
     - Protocol: HTTP or HTTPS
         - There are more and more phishing sites which are using https [3].
-    - a count of dots in FQDN (Fully Qualified Domain Name): integer
-        - There are more dots in FQDN in phishing sited [2]
+    - a number of dots in FQDN (Fully Qualified Domain Name): integer
+        - There are more dots (subdomains) in FQDN in phishing sited [2]
     - a length of URL: integer
         - This seems to be a trivial but interesting and never returns Null. 
     - a length of Fully Qualified Domain Name (FQDN): integer
