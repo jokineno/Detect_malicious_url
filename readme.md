@@ -14,10 +14,10 @@ Implement any kind of actual predicition models that uses the features to give p
 ### What I'm going to do:
 - Build feature extractors, which could predict a risk of web page being malicious
 - Extract 10-15 features. 
-    - Use APIs
+    - Use APIs: I will use APIs that does not require an API key or another authentication.
     - Use Beautiful Soup library for web scraping
-- Handle errors in extracting process: return NaN if error occurs, also save the error message.
-    - Store data in all cases -> NaNs are valuable information as well at this point.
+- Handle errors in an extracting process: if error occurs -> return NaN, also save the error message.
+    - Store data even if feature extraction fails -> NaNs are valuable information as well at this point.
 - Build a small dataset based on features and save it into .csv.
 
 ### What I'm NOT going to do
@@ -35,23 +35,23 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ### Categories: URL based, BlackLists, WHOIS based
 1.  URL based features
-    - protocol: HTTP or HTTPS
+    - Protocol: HTTP or HTTPS
         - There are more and more phishing sites which are using https [3].
     - a count of dots in FQDN (Fully Qualified Domain Name): integer
         - There are more dots in FQDN in phishing sited [2]
-    - a length of url: integer
+    - a length of URL: integer
         - This seems to be a trivial but interesting and never returns Null. 
     - a length of Fully Qualified Domain Name (FQDN): integer
         - Phishing site domains are typically shorter [2]
     - a number of redirections: integer
         - Many redirection can be used to evade the blacklists.
 2. Blacklists
-    - is ip on blacklist: Boolean
+    - is ip on a blacklist: Boolean
          - Use IPSUM list: see https://raw.githubusercontent.com/stamparm/ipsum/master/ipsum.txt
-    - is ip proxy: lookup Boolean
+    - is ip a proxy: lookup Boolean
         - Use https://input.payapi.io
 3. Domain history
-    - An age of the domain: Integer
+    - An age of a domain: Integer
         - The most of phishing sites are alive a really short period of time
     - Country: String
         - Try to find out if IP comes from a 'high-risk' country.
@@ -64,8 +64,6 @@ Implement any kind of actual predicition models that uses the features to give p
 ### Storing data
 - Data Structure: DataFrame by Pandas
     - Permanent storing in .csv format -> can be done with df.to_csv() function provided by Pandas .
-- Extractor failures will be handles and NULL/NaN/NoneTypes are still stored in a dataframe. 
-- Later, in model building stage I have to preprocess the data: for example:  mapping of categorical values into numerical.
 
 # Questions:
 1. What features could indicate the malicousness of a given URL?
@@ -81,7 +79,7 @@ Implement any kind of actual predicition models that uses the features to give p
 - Examples of other feature categories
     - Content based features: 
         - A background of a phishing page might be just a screenshot of the target page. 
-            - In this case: not a lot of text content or text inputs on the page. 
+            - In this case there's usually just a few text inputs or text content. 
          - Keyterm extraction
              - A usage of starting and landing main level domain (MLD)
                 - MLD (string) typically appears in several sources extracted from a target page where as in phishing page not [1].
@@ -90,7 +88,7 @@ Implement any kind of actual predicition models that uses the features to give p
                 - Phishing pages uses longer redirection chains and there are more variance in rdn usage on phishing pages compared to real pages [1]
 
 
-## 2. Attackers' flow of thought: Make Things Look and Feel the Same!
+## 2. Attackers' line of thought: Make Things Look and Feel the Same!
 - There are many types of ways to phish information. 
     - Phone calls: Nearly 50% of phone calls will be scams [3]
     - Impersonating techiques: DNS spoofing, email spoofing, social engineering [1]
@@ -101,26 +99,26 @@ Implement any kind of actual predicition models that uses the features to give p
 - A typical example of a phishing site is a web page which mimics a target page. At its best the phishing site looks and feels the same and a user may not detect that. 
 - Attackers' main goal is to drive a user to a fake page and make the user to think this is the real target page. In this case user might get tricked to hand over sensitive information: personal information, credit card number etc. 
 - Fake sites are usually alive for a short time. Typically target sites are the ones (enterprises) with a high traffic [3].
-    - The power of phishes come from statistical probability -> phishers send thousands or tens of thousands of emails and some of people will buy it! 
+    - The power of phishes come from statistical probability -> phishers send multiple emails and some of people will buy it! 
 - Also URLs can be made to look similar to a target: for example paypal.com vs. paypaI.com
 
 ## 3. What next? 
-- In general, I will: read more articles, learn more, understand more -> faster decision making. 
+- In general: read more articles, learn more, understand more -> faster decision making. 
 - I would gather more data from different sources, preprocess it, define metrics for model performance and then try out different models and see which performs the best. 
 
 ### Achieve a higher quality of data
 - Motto: garbage in, garbage out / gold in, gold out
-- At the moment for example the blacklist column contains only NaNs -> that does not help in predicting. 
-     -> Find more features without only None values.
+- At the moment processed dataset has quite a bit of None values. 
+    - I should find more features that the most of the times give some numerical value but also significant. 
 - Extract more features: based on the most of the provided articles the multi-criteria methods combining features from different categories works the best in predicting a phishing page [1,2]. 
 - I liked the idea of "Know Your Phish" [1] where all features are language independent. I would focus on those features.
 
-### Intuition over data
+### Intuition over the final data set.
 - Draw histograms, plots, find out correlations between features in order to get a intuition what is happening in the data. 
 
 ### Combine APIs
-- Combine information from several APIs or find an API that already does that: make sure data quality is ok! 
-    - In this task input.payapi was a good one, since it does not require authentication and code can be run by anyone without personal API keys etc. 
+- Combine information from several APIs or find an API that already does that: make sure that the data quality is ok! 
+    - In this task input.payapi was a good one, since it does not require authentication and is free to use. 
 
 ### Preprocess data
 - Mapping categorical values into numericals such as HTTP/HTTPS -> 0/1
@@ -128,7 +126,7 @@ Implement any kind of actual predicition models that uses the features to give p
 
 ### Define metrics: 
 - How I measure the accuracy of my model: train a model, validate it and test it with a test set. 
-- Get sample URLs from PhishTank or other similar database. 
+- Compare performance to phishing databases: can the model detect the ones that are already blacklisted. 
 
 ### Build a model
 - Build a classifier: for example Random Forest performed well in detecting phishing sites [2]
