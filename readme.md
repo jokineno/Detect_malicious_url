@@ -1,14 +1,5 @@
-## Assignment
-- In this assignment you as a HoxHunt Data Science Hunter are given the task to extract interesting features from a possible malicious indicator of compromise, more specifically in this case from a given potentially malicious URL.
-
-#### What we expect
-Investigate potential features you could extract from the given URL and implement extractors for the ones that interest you the most. Below example code extracts one feature but does not store it very efficiently (just console logs it). Implement sensible data structure using some known data structure library to store the features per URL. Also consider how would you approach error handling if one feature extractor fails?
-
-Be prepared to discuss questions such as: what features could indicate the malicousness of a given URL? What goes in to the thinking of the attacker when they are choosing a site for an attack? What would you develop next?
-
-#### What we don't expect
-Implement a humangous set of features.
-Implement any kind of actual predicition models that uses the features to give predictions on malicousness at this stage 
+## Description
+- In this assignment I am extracting a small set of features that could be a sign of a malicious URL. 
 
 
 ### What I'm going to do:
@@ -21,8 +12,8 @@ Implement any kind of actual predicition models that uses the features to give p
 - Build a small dataset based on features and save it into .csv.
 
 ### What I'm NOT going to do
-- Not too many features!
-- No modeling at this point! 
+- Not too many features. 
+- No modeling at this point. 
 
 
 ## Features
